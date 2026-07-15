@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wetter-Dashboard</title>
+<meta name="description" content="Aktuelles Wetter und 7-Tage-Vorhersage für jede Stadt, mit echten Live-Daten.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛅</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>⛅ Wetter-Dashboard</h1>
+      <p class="subtitle">Live-Daten von Open-Meteo — einfach eine Stadt eingeben.</p>
+    </header>
+
+    <form class="search" id="searchForm">
+      <input type="text" id="cityInput" placeholder="Stadt eingeben, z. B. Hamburg" autocomplete="off" required>
+      <button type="submit">Suchen</button>
+    </form>
+
+    <p class="status" id="statusText"></p>
+
+    <section class="current" id="currentCard" hidden>
+      <div class="current-main">
+        <span class="current-icon" id="currentIcon">☀️</span>
+        <span class="current-temp" id="currentTemp">--°</span>
+      </div>
+      <div class="current-info">
+        <h2 id="currentCity">–</h2>
+        <p id="currentDesc">–</p>
+        <p class="current-meta" id="currentMeta"></p>
+      </div>
+    </section>
+
+    <section class="forecast" id="forecast" hidden>
+      <h3>7-Tage-Vorhersage</h3>
+      <div class="forecast-chart" id="forecastChart"></div>
+    </section>
+
+    <footer class="app-footer">
+      <span class="credit">Wetterdaten: <a href="https://open-meteo.com" target="_blank" rel="noopener">open-meteo.com</a></span>
+      <a href="https://74faruk.github.io" target="_blank" rel="noopener">← Zurück zum Portfolio</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

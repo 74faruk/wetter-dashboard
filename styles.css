@@ -1,0 +1,224 @@
+:root {
+  --bg-top: #0ea5e9;
+  --bg-bottom: #1e3a8a;
+  --text: #f8fafc;
+  --text-dim: #cbd5e1;
+  --panel: rgba(255, 255, 255, 0.1);
+  --panel-border: rgba(255, 255, 255, 0.2);
+  --accent: #fbbf24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  padding: 3rem 1rem;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.app-header {
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.7rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.search input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search input::placeholder {
+  color: var(--text-dim);
+}
+
+.search button {
+  background: var(--accent);
+  color: #422006;
+  border: none;
+  padding: 0 1.3rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.search button:hover {
+  filter: brightness(1.05);
+}
+
+.status {
+  min-height: 1.2rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.status.error {
+  color: #fca5a5;
+}
+
+.current {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.current-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+}
+
+.current-icon {
+  font-size: 2.6rem;
+}
+
+.current-temp {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.current-info h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+.current-info p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.current-meta {
+  margin-top: 0.4rem !important;
+  font-size: 0.8rem !important;
+}
+
+.forecast {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  padding: 1.25rem;
+}
+
+.forecast h3 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.forecast-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.4rem;
+  height: 140px;
+}
+
+.day-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+  gap: 0.3rem;
+}
+
+.day-max {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.day-bar {
+  width: 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), #f97316);
+  min-height: 4px;
+}
+
+.day-min {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.day-icon {
+  font-size: 1rem;
+}
+
+.day-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 0.15rem;
+}
+
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.app-footer a {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 420px) {
+  .current {
+    flex-direction: column;
+    text-align: center;
+  }
+}
